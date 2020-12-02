@@ -1,12 +1,11 @@
 import java.util.Scanner;
 public class Calango {
-    int bucho; //atributos
+    int bucho;
     int maxBucho;
     int nPatas;
     int aux = 0;
 
-    //mesmo nome da classe = sombreamento de variavel
-    Calango(int bucho, int maxBucho, int nPatas){ //parametros
+    Calango(int bucho, int maxBucho, int nPatas){
         this.bucho = bucho;
         this.maxBucho = maxBucho;
         this.nPatas = nPatas;
@@ -14,17 +13,16 @@ public class Calango {
 
     void comer(int qtd){
         bucho += qtd;
-        if(bucho > maxBucho){
-            bucho = maxBucho;
-            System.out.println("Comi até ficar saciado");
+        if(bucho < maxBucho){
+            System.out.println("Comi mais uma comidinha enquanto maratono!");
         }else{
-            System.out.println("Tô cheio");
+            System.out.println("Tô cheio, nao quero comer mais enquanto maratono");
         }
     }
 
     void andar(){
         if(nPatas < 2){
-            System.out.println("Estou impossibilitado de tal tarefa");
+            System.out.println("Estou impossibilitado de tal tarefa, mas vou me arrastando");
             
         }
         if(bucho > 0){
@@ -38,7 +36,7 @@ public class Calango {
     void acidentar(){
         if(nPatas > 0){
             nPatas -= 1;
-            System.out.println("Ouch! Perdi uma pata");
+            System.out.println("Ouch! Perdi uma pata na maratona");
         }else{
             if(nPatas == 0)
                     aux = 1;
@@ -51,9 +49,9 @@ public class Calango {
         }else if (bucho > 0){
             nPatas += 1;
             bucho -= 1;
-            System.out.println("Opa! Recuperei uma pata!");
+            System.out.println("Opa! Recuperei uma pata enquanto maratono!");
         }else{
-            System.out.println("Nao tenho energia suficiente para me recuperar");
+            System.out.println("Nao tenho energia suficiente para me recuperar enquanto maratono");
         }
     }
     void nadando(){
@@ -63,7 +61,7 @@ public class Calango {
         }
         else if(bucho > 0){
             bucho -= 1;
-            System.out.println("Estou me cansando!");
+            System.out.println("Perdi uma das comidas no meu bucho!");
         }else{
             System.out.println("Morri de cansaço!");
             aux = 1;
@@ -76,11 +74,10 @@ public class Calango {
     }
 
     public static void main(String[] args) {
-        //referencia      = criando objeto
         Scanner lendo = new Scanner(System.in);
         int maratona_calango;
         int contagem = 1;
-        Calango deadlango = new Calango(10, 30, 4);
+        Calango deadlango = new Calango(5, 10, 4);
         System.out.println("\n Digite quanos KM você quer que o Deadlango faça de maratona: ");
         maratona_calango = lendo.nextInt();
 
