@@ -29,10 +29,9 @@ public class Calango {
         }
         if(bucho > 0){
             bucho -= 1;
-            System.out.println("Que passeio agradavel");
+            System.out.println("Maratonando satisfatoriamente");
             
         }
-        System.out.println("Estou muito cansado");
         
     }
 
@@ -41,7 +40,8 @@ public class Calango {
             nPatas -= 1;
             System.out.println("Ouch! Perdi uma pata");
         }else{
-            System.out.println("Já virei cobra!!");
+            if(nPatas == 0)
+                    aux = 1;
         }
     }
 
@@ -79,31 +79,37 @@ public class Calango {
         //referencia      = criando objeto
         Scanner lendo = new Scanner(System.in);
         int maratona_calango;
-        Calango deadlango = new Calango(0, 20, 4);
-        System.out.println(deadlango);
-        System.out.println("\n Digite quanos KM você quer que o calngo faça de maratona: ");
+        int contagem = 1;
+        Calango deadlango = new Calango(10, 30, 4);
+        System.out.println("\n Digite quanos KM você quer que o Deadlango faça de maratona: ");
         maratona_calango = lendo.nextInt();
 
         
         for(int i = 0; i < maratona_calango; i++){
-            deadlango.andar();
-                if(i % 2 != 0)
+            int leitor;
+            System.out.println("\nDigite 1 para Andar\n2 Para comer\n3 Para fazer o deadLango se Acidentar\n4 Para ele se regenerar\n5 Para ele Nadar");
+            leitor = lendo.nextInt();
+                if(leitor == 1)
+                    deadlango.andar();
+                else if(leitor == 2)
                     deadlango.comer(1);
-                if(i % 4 == 0){
+                else if(leitor == 3)
                     deadlango.acidentar();
-                }
-                if(i > 2 && i < 10){
+                else if(leitor == 4)
                     deadlango.regenerar();
-                }
-                if(i == 10 && i <= 15){
+                else if(leitor == 5){
                     System.out.println("Percuso aquatico para o Deadlango nadar\n");
                     deadlango.nadando();
                 }
             if(deadlango.aux == 1)
                 break;
-            
+            System.out.println("DeadLango andou mais 1 km\n");
         }
+        if(deadlango.aux == 0)
+            System.out.println("Dead lango saiu vivo da maratona!");
         
+        System.out.println("Estado do DeadLango:");
+        System.out.println(deadlango);
     }
 }
 
