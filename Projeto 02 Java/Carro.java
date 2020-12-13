@@ -20,7 +20,11 @@ public class Carro {
     }
     public int out(int num){
         if(this.nPessoas>=0){
-            this.nPessoas -= num;
+            for(int i = 0; i<num; i++){
+                if(this.nPessoas == 0)
+                    break;
+                this.nPessoas -= 1;
+            }
             System.out.println("\nPessoas desembarcaram, total: " + this.nPessoas);
             
         }
@@ -57,5 +61,5 @@ public class Carro {
     }
     public String show(){
         return "\nKilometragem andada: " + this.km;
-    }
+    }   
 }
