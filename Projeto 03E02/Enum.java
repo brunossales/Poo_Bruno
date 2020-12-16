@@ -41,6 +41,7 @@ public class Enum{
                 System.out.println(bebida);
             }
             if(queb[0].equals("sair")){
+                System.out.println("Já vai embora né pé inchado");
                 System.out.println(bebida);
                 break;
             }
