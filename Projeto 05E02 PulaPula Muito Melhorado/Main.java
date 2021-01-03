@@ -33,7 +33,8 @@ class Main{
                 System.out.println(criancinha);
             
             else if(queb[0].equals("fechar")){
-                System.out.println("Fechando o parquinho por hoje, até mais");
+                criancinha.fechar();
+                System.out.println(criancinha);
                 break;
             }
 

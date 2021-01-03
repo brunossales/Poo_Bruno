@@ -103,6 +103,11 @@ class PulaPula{
             System.out.println("");
         }
     }
+    public void fechar(){
+        System.out.println("O parquinho está fechando por hoje!\nTodas Crianças da lista Espera e Brincando sairam!");
+        brincando.removeAll(brincando);
+        esperando.removeAll(esperando);
+    }
 
     public String toString(){
         return "=>" + esperando + " => " + brincando;
