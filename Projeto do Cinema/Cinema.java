@@ -12,7 +12,7 @@ public class Cinema{
                     return ;
             }
             for(int i = 0; i < cliente.size(); i++){
-                if(cliente.id[i] == id){
+                if(cliente[i].id == id){
                     System.out.println("Erro, já existe alguém com esse ID na sala de cinema");
                     return ;
                 }
