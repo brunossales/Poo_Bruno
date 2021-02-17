@@ -1,4 +1,4 @@
-# Relatório Semanal/Recesso :office:
+# Relatório Semanal :office:
 
 ## :one: - O que fiz
 
