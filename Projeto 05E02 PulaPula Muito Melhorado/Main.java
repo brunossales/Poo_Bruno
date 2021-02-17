@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.management.RuntimeErrorException;
+
 class Main {
     public static void main(String[] args) {
         PulaPula criancinha = new PulaPula();
@@ -48,8 +50,8 @@ class Main {
 
             } catch (IndexOutOfBoundsException z) {
                 System.out.println("Rapaz tu deve ter esquecido um parametro o man");
-            } catch (RuntimeException e) {
-                System.out.println(e.getMessage());
+            } catch (NullPointerException y) {
+                System.out.println(y.getMessage());
             }
             System.out.println("");
         }

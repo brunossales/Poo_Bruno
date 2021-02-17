@@ -42,7 +42,7 @@ public class Topic {
                 return true;
             }
         }
-        throw new RuntimeException("#Erro# : Topic cheiaaaa");
+        System.out.println("Topic cheiaa");
         return false;
     }
 

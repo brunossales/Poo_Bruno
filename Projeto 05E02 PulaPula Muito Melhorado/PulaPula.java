@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.management.RuntimeErrorException;
+
 class Crianca {
     String nome;
     int idade;
@@ -49,8 +51,7 @@ class PulaPula {
     // tira da fila de brincando e coloca na fila de espera
     public void sair() {
         if (brincando.isEmpty()) {
-            System.out.println("Nenhuma criança bricando");
-            return;
+            throw new NullPointerException("Não foi encontrado cara");
         }
         Crianca primeiraAbrincar = brincando.get(brincando.size() - 1);
         brincando.remove(brincando.size() - 1);
