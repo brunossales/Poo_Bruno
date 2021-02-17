@@ -50,9 +50,9 @@ public class Main {
                 }
 
             } catch (NullPointerException e) {
-                JOptionPane.showMessageDialog(null, e.toString());
+                JOptionPane.showMessageDialog(null, "⛔" + e.toString());
             } catch (IndexOutOfBoundsException z) {
-                JOptionPane.showMessageDialog(null, z.toString());
+                JOptionPane.showMessageDialog(null, "⛔" + z.toString());
             }
         }
     }
