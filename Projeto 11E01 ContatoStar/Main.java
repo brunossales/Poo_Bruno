@@ -12,7 +12,7 @@ public class Main {
                     + "Favoritar, junto com o nome, para favoritar o contato\n"
                     + "Unstar ou desfavoritar, junto com o nome para desfavoritar o contato, deixa-lo como normal\n"
                     + "RmContato, junto com o nome, para remover o contato do celular\n"
-                    + "MostrarCon, junto o nome, para mostrar o contato de acordo com o nome\n"
+                    + "procurarCon, junto o nome, para mostrar o contato de acordo com o nome\n"
                     + "Pattern, junto com a substring para procurar o contato ou fone \n"
                     + "ProcurarBookMark ou ProcurarFavorito, junto com o nome para procurar na lista de favoritos\n"
                     + "RmFone, junto com o nome e o index do fone, para removelo do contato\n"
@@ -36,7 +36,7 @@ public class Main {
                     agendaPlus.bookmark(op[1]);
 
                 else if (op[0].equalsIgnoreCase("Pattern"))
-                    agendaPlus.search(op[1]);
+                    JOptionPane.showMessageDialog(null, agendaPlus.search(op[1]));
 
                 else if (op[0].equalsIgnoreCase("Unstar") || op[0].equalsIgnoreCase("desfavoritar"))
                     agendaPlus.unbookmark(op[1]);
@@ -44,7 +44,7 @@ public class Main {
                 else if (op[0].equalsIgnoreCase("RmContato"))
                     agendaPlus.rmContato(op[1]);
 
-                else if (op[0].equalsIgnoreCase("MostrarCon"))
+                else if (op[0].equalsIgnoreCase("procurarCon"))
                     JOptionPane.showMessageDialog(null, agenda.getContatos(op[1]));
 
                 else if (op[0].equalsIgnoreCase("procurarbookmark") || op[0].equalsIgnoreCase("procurarfavorito"))

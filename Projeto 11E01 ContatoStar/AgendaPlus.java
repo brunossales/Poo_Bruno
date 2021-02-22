@@ -35,8 +35,10 @@ public class AgendaPlus extends Agenda {
 
     public void unbookmark(String id) {
         for (Map.Entry<String, ContatoPlus> con : boookmarks.entrySet()) {
-            if (con.getKey().equalsIgnoreCase(id))
+            if (con.getKey().equalsIgnoreCase(id)) {
+                this.boookmarks.get(id).setStarred(false);
                 this.boookmarks.remove(id);
+            }
         }
     }
 
@@ -70,6 +72,6 @@ public class AgendaPlus extends Agenda {
             }
             buffer.append("- ").append(cont).append("\n");
         }
-        return super.toString();
+        return buffer.toString();
     }
 }

@@ -30,8 +30,8 @@ public class Agenda {
         if (contatos.get(id) == null) {
             throw new NullPointerException("Contato não existe, é null");
         }
-        if (contatos.containsKey(id)) {
-            contatos.remove(id);
+        if (this.contatos.containsKey(id)) {
+            this.contatos.remove(id);
         }
     }
 
@@ -41,7 +41,7 @@ public class Agenda {
 
     public Map<String, Contato> getContatos(String id) {
         Map<String, Contato> aux = new TreeMap<>();
-        if (contatos.get(id) == null) {
+        if (this.contatos.get(id).getName() == null) {
             throw new NullPointerException("Contato não existe, é null man");
         }
         for (Map.Entry<String, Contato> contato : contatos.entrySet()) {
@@ -53,18 +53,20 @@ public class Agenda {
         return null;
     }
 
+    boolean achou = false;
+
     public Map<String, Contato> search(String pattern) {
         Map<String, Contato> aux = new TreeMap<>();
         for (Map.Entry<String, Contato> con : contatos.entrySet()) {
-            boolean achou = false;
+
             if (con.getKey().contains(pattern))
-                achou = true;
+                this.achou = true;
 
             for (Fone fon : con.getValue().getFones()) {
                 if (fon.getLabel().contains(pattern) || fon.getNumber().contains(pattern))
-                    achou = true;
+                    this.achou = true;
             }
-            if (achou)
+            if (this.achou)
                 aux.put(con.getKey(), con.getValue());
         }
         if (aux.isEmpty())
