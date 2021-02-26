@@ -1,4 +1,4 @@
-# Relatório Semanal/Recesso 🏢
+# Relatório Semanal 🏢
 
 ## :one: - O que fiz
 
