@@ -14,12 +14,16 @@ class Tweet {
         this.userName = userName;
         this.msg = msg;
         this.idTw++;
+        if (this.idTw == 1)
+            this.idTw = 0;
     }
 
     public String toString() {
         StringBuilder saida = new StringBuilder();
-        saida.append(idTw).append(":").append(userName).append("(").append(msg).append(")").append("[ ").append(likes)
-                .append("]");
+        saida.append(idTw).append(":").append(userName).append("(").append(msg).append(")");
+        if (!likes.isEmpty()) {
+            saida.append("[ ").append(likes).append("]");
+        }
         return saida.toString();
     }
 

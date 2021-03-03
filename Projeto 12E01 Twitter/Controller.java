@@ -43,14 +43,15 @@ public class Controller {
         if (!users.containsKey(username))
             throw new Exce(username);
         tweets.get(index).likes(username);
+        users.get(tweets.get(index).getUserName()).likeDoTimeline(index, username);
     }
 
     public void follow(User us, User us1) {
         if (!users.containsKey(us1.getUsername())) {
-            throw new Exce1(us1.getUsername());
+            throw new Exce(us1.getUsername());
         }
         if (!users.containsKey(us.getUsername())) {
-            throw new Exce1(us.getUsername());
+            throw new Exce(us.getUsername());
         }
         following.put(us.getUsername(), us1);
         followers.put(us1.getUsername(), us);
@@ -87,11 +88,20 @@ public class Controller {
         unreadCount = 0;
     }
 
+    public void showTweets() {
+        StringBuilder saida = new StringBuilder();
+        for (Map.Entry<String, User> auxUs : users.entrySet()) {
+            saida.append(auxUs.getKey()).append("\n\t").append(auxUs.getValue().showTimeline()).append("\n");
+        }
+        JOptionPane.showMessageDialog(null, saida.toString());
+    }
+
     public String toString() {
         StringBuilder saida = new StringBuilder();
         for (Map.Entry<String, User> aux : users.entrySet()) {
-            saida.append(aux.getKey()).append("\n \t").append("  SEGUINDO ").append(following.get(aux.getKey()))
-                    .append("\n \t").append("  SEGUIDORES ").append(followers.get(aux.getKey()));
+            saida.append(aux.getKey()).append("\n \t").append("  SEGUINDO  [").append(following.get(aux.getKey()))
+                    .append(" ]").append("\n \t").append("  SEGUIDORES [ ").append(followers.get(aux.getKey()))
+                    .append(" ]").append("\n");
         }
         return saida.toString();
     }

@@ -16,13 +16,22 @@ public class User {
         this.timeline.put(id, tw);
     }
 
+    public void likeDoTimeline(int id, String username) {
+        this.timeline.get(id).likes(username);
+    }
+
     public String showTimeline() {
         StringBuilder saida = new StringBuilder();
 
         for (Map.Entry<Integer, Tweet> aux : timeline.entrySet()) {
-            saida.append(aux.getKey()).append(":").append(aux.getValue().getUserName()).append(aux.getValue().getMsg());
+            saida.append(aux.getKey()).append(":").append(aux.getValue().getUserName()).append(" (")
+                    .append(aux.getValue().getMsg()).append(" )").append(aux.getValue().getLikes()).append("\n");
         }
         return saida.toString();
+    }
+
+    public String toString() {
+        return username;
     }
 
     User(String id) {
