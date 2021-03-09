@@ -1,8 +1,11 @@
-public class Conta extends Agencia {
+import javax.print.attribute.standard.MediaSize.Other;
+
+public class Conta {
     protected int id;
     protected float saldo;
     protected String idCliente;
     protected String type;
+    protected float rendimento;
 
     Conta(int id, String idCliente) {
         this.id = id;
@@ -18,6 +21,18 @@ public class Conta extends Agencia {
             this.saldo = 0;
     }
 
+    public void atualizacaomensal() {
+        if (type.equals("CP")) {
+            rendimento = saldo * 0.01f;
+            saldo = saldo + rendimento;
+        } else {
+            rendimento -= 20f;
+            saldo += rendimento;
+            rendimento = 0;
+        }
+
+    }
+
     public void depositar(float value) {
         this.saldo += value;
     }
@@ -25,10 +40,9 @@ public class Conta extends Agencia {
     public void transferir(Conta Other, float value) {
         if (this.saldo - value < 0)
             throw new EceSaldo();
-        if (!super.contas.contains(Other))
-            throw new EceConta();
+
         this.saldo -= value;
-        super.contas.get(Other.id).saldo += value;
+        Other.saldo += value;
     }
 
     public String toString() {

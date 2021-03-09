@@ -11,7 +11,18 @@ public class Agencia {
         clientes.get(cont).contas.add(new ContaPoupanca(cont + 1, idCliente));
         contas.add(new ContaCorrente(cont, idCliente));
         contas.add(new ContaPoupanca(cont + 1, idCliente));
-        cont++;
+        cont += 2;
+    }
+
+    public void reaguste() {
+        for (int i = 0; i < contas.size(); i++) {
+            contas.get(i).atualizacaomensal();
+        }
+        for (int i = 0; i < clientes.size(); i++) {
+            clientes.get(i).contas.get(i).atualizacaomensal();
+            clientes.get(i).contas.get(i + 1).atualizacaomensal();
+        }
+
     }
 
     public String toString() {
