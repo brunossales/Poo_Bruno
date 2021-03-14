@@ -10,7 +10,7 @@
 
 ## :three: - Como fiz
 
-### Fiz utilizando interface, polimorfismo, relação NxN, Mapa, ArrayList
+### Fiz utilizando interface, polimorfismo, relação NxN, Mapa, ArrayList... 👨‍💻
 
 ## :four: - O que aprendi
 
