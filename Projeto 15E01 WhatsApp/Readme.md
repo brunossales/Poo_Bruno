@@ -6,7 +6,7 @@
 
 ## :two: - Com quem fiz
 
-### Com Vinicius, aluno da mesma turma, através de uma call no discord 💻
+### Com Vinicius, aluno da mesma turma, através de uma call no discord, link do GitHub dele: [Vinicius Roque](https://github.com/sydo26/POO-2020-2) 💻
 
 ## :three: - Como fiz
 
@@ -14,7 +14,7 @@
 
 ## :four: - O que aprendi
 
-### Aprendi sobre o ComputeAbcente e ComputePresente, em um mapa, para adicioanr quando já tem essa Key e quando nao tem 🧐
+### Aprendi sobre o ComputeAbcente e ComputePresente, em um mapa, para adicioanr quando já tem essa Key e quando nao tem 😥
 
 ## :five: - Minhas dificuldades
 
